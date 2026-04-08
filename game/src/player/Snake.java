@@ -6,7 +6,7 @@ import gamestructure.Grid;
 import interfaces.Movable;
 import java.util.*;
 
-public class SnakeHead implements Movable, KeyboardHandler {
+public class Snake implements Movable, KeyboardHandler {
     private List<Rectangle> snake = new ArrayList<>();
     private Grid grid;
     private Rectangle mainSnakeBody;
@@ -15,34 +15,11 @@ public class SnakeHead implements Movable, KeyboardHandler {
     private Keyboard k;
 
 
-    public SnakeHead(Grid grid) {
+    public Snake(Grid grid) {
         this.grid = grid;
         mainSnakeBody = new Rectangle(grid.getGridCenterX(), grid.getGridCenterY(), grid.getCellSize(), grid.getCellSize());
         createSnakeBody();
-    }
-
-    @Override
-    public void move() {
-
-    }
-
-    @Override
-    public void moveUp() {
-    }
-
-    @Override
-    public void moveDown() {
-
-    }
-
-    @Override
-    public void moveLeft() {
-
-    }
-
-    @Override
-    public void moveRight() {
-
+        keyboardImplementation();
     }
 
     // When it hits something
@@ -77,6 +54,30 @@ public class SnakeHead implements Movable, KeyboardHandler {
 
     // moving mechanics
 
+    @Override
+    public void move() {
+
+    }
+
+    @Override
+    public void moveUp() {
+    }
+
+    @Override
+    public void moveDown() {
+
+    }
+
+    @Override
+    public void moveLeft() {
+
+    }
+
+    @Override
+    public void moveRight() {
+
+    }
+
     public void keyboardImplementation() {
         k = new Keyboard(this);
         KeyboardEvent w = new KeyboardEvent();
@@ -104,15 +105,19 @@ public class SnakeHead implements Movable, KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
         switch (keyboardEvent.getKey()) {
             case KeyboardEvent.KEY_W:
+                System.out.println("Moved up!");
                 moveUp();
                 break;
             case KeyboardEvent.KEY_A:
+                System.out.println("Moved left!");
                 moveLeft();
                 break;
             case KeyboardEvent.KEY_S:
+                System.out.println("Moved down!");
                 moveDown();
                 break;
             case KeyboardEvent.KEY_D:
+                System.out.println("Moved right!");
                 moveRight();
                 break;
         }
@@ -122,4 +127,40 @@ public class SnakeHead implements Movable, KeyboardHandler {
     public void keyReleased(KeyboardEvent keyboardEvent) {
 
     }
+
+    class SnakeBody implements Movable {
+        public Rectangle snakeBody;
+        public Grid grid;
+
+        public SnakeBody(Grid grid) {
+            this.grid = grid;
+            snakeBody = new Rectangle(grid.getGridCenterX(), grid.getGridCenterY(), grid.getCellSize(), grid.getCellSize());
+        }
+
+        @Override
+        public void move() {
+
+        }
+
+        @Override
+        public void moveUp() {
+
+        }
+
+        @Override
+        public void moveDown() {
+
+        }
+
+        @Override
+        public void moveLeft() {
+
+        }
+
+        @Override
+        public void moveRight() {
+
+        }
+    }
 }
+

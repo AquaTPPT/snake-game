@@ -10,8 +10,4 @@ public class Random {
         return (int) Math.floor((Math.random() * maxValue) + 1);
     }
 
-    public static double random() {
-        return Math.random();
-    }
-
 }

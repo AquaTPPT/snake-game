@@ -4,7 +4,7 @@ import player.*;
 
 public class Game {
     private Grid grid;
-    private Snake snake;
+    private SnakeHead snake;
     private Obstacles obstacles;
     private Fruit fruit;
 
@@ -13,7 +13,12 @@ public class Game {
     public void init() {
         grid = new Grid(100, 50);
         grid.draw();
-        snake = new Snake(grid);
+        snake = new SnakeHead(grid);
+        fruit = new Fruit(grid);
+    }
+
+    public boolean checkPosition() {
+     return false;
     }
 
     public int addScore() { return score++; }

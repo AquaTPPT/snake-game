@@ -4,7 +4,11 @@ public interface Movable {
 
     void move();
 
-    void hit();
+    void moveUp();
 
-    void grab();
+    void moveDown();
+
+    void moveLeft();
+
+    void moveRight();
 }

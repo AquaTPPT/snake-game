@@ -38,6 +38,10 @@ public class Grid {
         return rows;
     }
 
+    public int rowToX() { return cols * cellSize; }
+
+    public int colToY() { return rows * cellSize; }
+
     public int getGridCenterX() { return (PADDING + cols * cellSize) / 2; }
 
     public int getGridCenterY() { return (PADDING + rows * cellSize) / 2; }

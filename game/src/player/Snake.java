@@ -7,10 +7,10 @@ import interfaces.Movable;
 import java.util.*;
 
 public class Snake implements Movable, KeyboardHandler {
-    private List<Rectangle> snake = new ArrayList<>();
+    private List<SnakeBody> snake = new ArrayList<>();
     private Grid grid;
     private Rectangle mainSnakeBody;
-    private Rectangle snakeBody;
+    private SnakeBody snakeBody;
     private int snakeBodyLength = 1;
     private Keyboard k;
 
@@ -35,7 +35,7 @@ public class Snake implements Movable, KeyboardHandler {
     // to add a square to the snake's body
 
     public void addToSnakeBody() {
-        snakeBody = new Rectangle(mainSnakeBody.getX(), mainSnakeBody.getY(), grid.getCellSize(), grid.getCellSize());
+        snakeBody = new SnakeBody();
         snake.add(snakeBody);
         snakeBody.setColor(Color.CYAN);
         snakeBody.draw();

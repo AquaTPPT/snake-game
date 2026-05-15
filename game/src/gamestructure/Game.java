@@ -4,9 +4,10 @@ import objects.*;
 import player.*;
 
 public class Game implements KeyboardHandler {
+
+    // private Obstacles obstacles;
     private Grid grid;
     private Snake snake;
-    private Obstacles obstacles;
     private Fruit fruit;
     private Keyboard keyboard;
 
